@@ -6,4 +6,9 @@
   background-color: blue;
   /*to make the square of the div a circle*/
   border-radius: 100px;
+
+  position: relative;
+}
+.hand{
+  
 }
