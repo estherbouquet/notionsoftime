@@ -1,14 +1,54 @@
+body{
+  vertical-align: middle;
+}
 .clock{
   /*size of the clock*/
-  width: 200px;
-  height: 200px;
+  width: 600px;
+  height: 600px;
   /*bkgnd col of the clock*/
-  background-color: blue;
+  /*background-color: blue;*/
   /*to make the square of the div a circle*/
-  border-radius: 100px;
-
+  border-radius: 300px;
   position: relative;
+  margin: auto;
+
 }
 .hand{
-  
+  /*basic dimensions*/
+  width: 1px;
+  height: 170px;
+  border-radius: 5px;
+  /*color of the hands*/
+  background-color: blue;
+  position: absolute; /*so they are all one above each other to start, which will make easier to place them on the clock after otherwise they are one after each other*/
+
+  /*we need to place them on the clock now*/
+
+  /*we decide that the bottom of the hand will be on the middle of the clock (because the top will rotate)*/
+  bottom: 300px; /* the height of the clock/2* /
+
+  /*and that the left corner will be at the middle of the width */
+  left: 300px; /*the width of the clock/2*/
+
+/*
+  to rotate them we need a transformation
+  transform: rotate(90deg);
+  but doing only this will rotate the hands around themselves, around their own middle, not the clock middle aka the botton of the hand
+*/
+
+  /*so we need to transform their origin*/
+  transform-origin: 50% 100%;
+ /*as we want to rotate the hands continuously now, we will set the transform through js and thus, comment the transform line in css*/
+
+}
+
+.min{
+  /*a little bit longer*/
+  height: 250px;
+}
+
+.sec{
+  /*longer and with a diff col*/
+  height: 280px;
+  background-color: pink;
 }
