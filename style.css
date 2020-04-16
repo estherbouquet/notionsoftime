@@ -1,0 +1,9 @@
+.clock{
+  /*size of the clock*/
+  width: 200px;
+  height: 200px;
+  /*bkgnd col of the clock*/
+  background-color: blue;
+  /*to make the square of the div a circle*/
+  border-radius: 100px;
+}
