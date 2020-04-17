@@ -1,34 +1,53 @@
-body{
+*, body{
   vertical-align: middle;
+  font-family: "gallique";
+  hyphens: auto;
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  text-align: center;
+  font-size: 110pt;
+  position: relative;
+  width: 100vw;
+  margin: 0;
+  height: 100vh;
+  align-items: center;
+  display: grid;
 }
 .clock{
   /*size of the clock*/
-  width: 600px;
-  height: 600px;
+  width: 99vh;
+  height: 99vh;
   /*bkgnd col of the clock*/
   /*background-color: blue;*/
+  /*border: solid 2px black;*/
   /*to make the square of the div a circle*/
-  border-radius: 300px;
-  position: relative;
-  margin: auto;
-
+  border-radius: 50vh;
+  position: absolute;
+  display: inline;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  opacity: 0.2;
 }
-.hand{
+.hand, .fhand{
   /*basic dimensions*/
-  width: 1px;
-  height: 170px;
+  width: 1.2px;
+  height: 30vh;
   border-radius: 5px;
   /*color of the hands*/
-  background-color: blue;
+  background-color: grey;
   position: absolute; /*so they are all one above each other to start, which will make easier to place them on the clock after otherwise they are one after each other*/
 
   /*we need to place them on the clock now*/
 
   /*we decide that the bottom of the hand will be on the middle of the clock (because the top will rotate)*/
-  bottom: 300px; /* the height of the clock/2* /
+  bottom: 49vh; /* the height of the clock/2* /
 
   /*and that the left corner will be at the middle of the width */
-  left: 300px; /*the width of the clock/2*/
+  left: 49vh; /*the width of the clock/2*/
 
 /*
   to rotate them we need a transformation
@@ -42,13 +61,27 @@ body{
 
 }
 
-.min{
+.fakehour, .fakemin, .fakesec{
+  background-color: blue;
+  width: 0.2vh;
+}
+
+.min, .fakemin{
   /*a little bit longer*/
-  height: 250px;
+  height: 40vh;
 }
 
 .sec{
   /*longer and with a diff col*/
-  height: 280px;
-  background-color: pink;
+  height: 48vh;
+  background-color: black;
+}
+
+.fakesec{
+  height: 48vh;
+}
+
+@font-face {
+  font-family: "gallique";
+  src: url("./Gallique-Light.otf");
 }

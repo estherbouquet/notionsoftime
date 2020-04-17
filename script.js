@@ -11,6 +11,7 @@ function runClock() {
   var min = now.getMinutes();
   var sec = now.getSeconds();
   var ms = now.getMilliseconds();
+  var fhour = now.getHours();
   //now we have the numbers we need to calculate the rotation but we need to also get the div we're going to control through them
 
   //first thing we want is to reach the div clock in our document (html) that contains all our sub div
@@ -19,6 +20,10 @@ function runClock() {
   var hourHand = clock.querySelector("div.hour");
   var minHand = clock.querySelector("div.min");
   var secHand = clock.querySelector("div.sec");
+
+  var fhourHand = clock.querySelector("div.fakehour");
+  var fminHand = clock.querySelector("div.fakemin");
+  var fsecHand = clock.querySelector("div.fakesec");
 
   //now that we have access to the hands and to the numbers corresponding, we need to calculate the rotation with some small geometry and the time data
 
@@ -39,6 +44,14 @@ function runClock() {
   secHand.style.transform = "rotate(" + secRotation + "deg)";
 
 
+  var fhourRotation = 30 * fhour + 0.5 * min;
+  fhourHand.style.transform = "rotate(" + 6 + fhourRotation + "deg)";
+
+  var fminRotation = -6 * min + -0.1 * sec;
+  fminHand.style.transform = "rotate(" + fminRotation + "deg)";
+
+  var fsecRotation = 6 * sec + 0.006 * ms;
+  fsecHand.style.transform = "rotate(" + 2 + fsecRotation * 4 + "deg)";
 
   //as soon as we run the page, we want every single frame of the page too
   requestAnimationFrame(runClock);
