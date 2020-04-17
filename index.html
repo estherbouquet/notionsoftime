@@ -6,7 +6,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="container" onscroll="myFunction()">
     <div class="clock">
       <!-- hand = aiguille -->
       <!-- the order matters -->
@@ -19,15 +18,14 @@
       <div class="fhand fakesec"></div>
     </div>
     <h1>NOTIONS <br>OF TIME(S)</h1>
-  </div>
 
   <script src="script.js"></script>
 
   <script>
-  function myFunction(){
-    var container = document.getElementById("container");
-    var y = container.scrollTop();
-    console.log("yo: "+y);
+  document.body.onscroll = function (event){
+    //var container = document.getElementById("container");
+    //var y = container.scrollTop();
+    console.log(window.scrollY);
   }
   </script>
 
