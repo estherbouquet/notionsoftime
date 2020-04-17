@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" onscroll="unfixingScrolling()">
-  <head>
-    <meta charset="utf-8">
-    <title>notions of time(s)</title>
-    <link rel="stylesheet" href="style.css">
-
-  </head>
-  <body>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>notions of time(s)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="container" onscroll="myFunction()">
     <div class="clock">
       <!-- hand = aiguille -->
-      <!-- the order matter -->
+      <!-- the order matters -->
       <div class="hand hour"></div>
       <div class="hand min"></div>
       <div class="hand sec"></div>
@@ -17,20 +17,19 @@
       <div class="fhand fakehour"></div>
       <div class="fhand fakemin"></div>
       <div class="fhand fakesec"></div>
-
-      <div class="dash">
-
-      </div>
     </div>
     <h1>NOTIONS <br>OF TIME(S)</h1>
-    <script src="script.js"></script>
+  </div>
 
-    <script>
-      function unfixingScrolling(){
-        var element = document.querySelector("html");
-        var y = element.scrollTop;
-        console.log("yo: "+y);
-      }
-    </script>
-  </body>
+  <script src="script.js"></script>
+
+  <script>
+  function myFunction(){
+    var container = document.getElementById("container");
+    var y = container.scrollTop();
+    console.log("yo:");
+  }
+  </script>
+
+</body>
 </html>
