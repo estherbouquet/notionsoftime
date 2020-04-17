@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" onscroll="unfixingScrolling()">
   <head>
     <meta charset="utf-8">
     <title>notions of time(s)</title>
@@ -25,5 +25,12 @@
     <h1>NOTIONS <br>OF TIME(S)</h1>
     <script src="script.js"></script>
 
+    <script>
+      function unfixingScrolling(){
+        var element = document.querySelector("html");
+        var y = element.scrollTop;
+        console.log("yo: "+y);
+      }
+    </script>
   </body>
 </html>
