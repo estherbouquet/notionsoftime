@@ -93,4 +93,4 @@ $.fn.followTo = function ( pos ) {
     });
 };
 
-$('.clock').followTo(1750);
+$('.clock').followTo(1950);
