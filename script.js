@@ -50,8 +50,8 @@ function runClock() {
   var fminRotation = -6 * min + -0.1 * sec;
   fminHand.style.transform = "rotate(" + fminRotation + "deg)";
 
-  var fsecRotation = 6 * sec + 0.006 * ms;
-  fsecHand.style.transform = "rotate(" + 2 + fsecRotation * 4 + "deg)";
+  var fsecRotation = 3 * sec;
+  fsecHand.style.transform = "rotate(" + fsecRotation * 0.5 + "deg)";
 
   //as soon as we run the page, we want every single frame of the page too
   requestAnimationFrame(runClock);
@@ -59,3 +59,18 @@ function runClock() {
 
 //as soon as we run the page, it will run the function
 runClock();
+
+
+
+document.body.onscroll = function (event){
+  //var container = document.getElementById("container");
+  //var y = container.scrollTop();
+  var scrollValue = window.scrollY;
+
+  var clock = document.querySelector("div.clock");
+  clock.style.opacity = 0.2 + scrollValue/3000;
+  if (scrollValue > 1900){
+  } else {
+    clock.style.backgroundColor = "white";
+  }
+}

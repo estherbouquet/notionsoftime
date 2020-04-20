@@ -15,14 +15,86 @@ h1{
   height: 100vh;
   align-items: center;
   display: grid;
-  margin-bottom: 90vh;
+  margin-bottom: 50vh;
+}
+
+p.intro1{
+  margin-top: -50vh;
+  font-size: 55pt;
+  /*width: 50vw;*/
+  display: block;
+  /*text-align: center;*/
+  position: absolute;
+  /*transform: translateX(50%);*/
+  line-height: 1.3em;
+  width: 69vw;
+  hyphens: none;
+  left: 3vw;
+}
+
+p.intro2{
+  padding-top: 2vh;
+  font-size: 55pt;
+  display: block;
+  position: relative;
+  line-height: 1.3em;
+  width: 70vw;
+  left: 18vw;
+  hyphens: none;
+}
+
+p.intro3{
+  font-size: 55pt;
+  display: block;
+  position: relative;
+  line-height: 1.3em;
+  width: 70vw;
+  left: 23vw;
+  hyphens: none;
+}
+
+p.intro4{
+  padding-top: 3vh;
+  font-size: 55pt;
+  display: block;
+  position: relative;
+  line-height: 1.3em;
+  width: 80vw;
+  left: 2vw;
+  hyphens: none;
+  text-align: right;
+}
+p.intro5{
+  font-size: 55pt;
+  display: block;
+  position: relative;
+  line-height: 1.3em;
+  width: 80vw;
+  left: 18vw;
+  hyphens: none;
+}
+
+sup{
+  vertical-align: super;
+  font-size: 17pt;
+}
+.auteur{
+  font-size: 35pt;
+  display: block;
+  position: relative;
+  line-height: 1.3em;
+  text-align: right;
+  right: 3vw;
+  hyphens: none;
+  padding-top: 5vh;
+  margin-bottom: 100vh;
 }
 .clock{
   /*size of the clock*/
   width: 99vh;
   height: 99vh;
   /*bkgnd col of the clock*/
-  /*background-color: blue;*/
+  /*background-color: none;*/
   /*border: solid 2px black;*/
   /*to make the square of the div a circle*/
   border-radius: 50vh;
@@ -63,7 +135,7 @@ h1{
 }
 
 .fakehour, .fakemin, .fakesec{
-  background-color: blue;
+  background-color: lime;
   width: 0.2vh;
 }
 
