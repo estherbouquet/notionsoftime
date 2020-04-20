@@ -47,7 +47,7 @@ function runClock() {
   var fhourRotation = 30 * fhour + 0.5 * min;
   fhourHand.style.transform = "rotate(" + 6 + fhourRotation + "deg)";
 
-  var fminRotation = -6 * min + -0.1 * sec;
+  var fminRotation = -6 * min;
   fminHand.style.transform = "rotate(" + fminRotation + "deg)";
 
   var fsecRotation = 3 * sec;
@@ -60,17 +60,23 @@ function runClock() {
 //as soon as we run the page, it will run the function
 runClock();
 
-
-
 document.body.onscroll = function (event){
   //var container = document.getElementById("container");
   //var y = container.scrollTop();
   var scrollValue = window.scrollY;
-
   var clock = document.querySelector("div.clock");
+  //will need a map function here
   clock.style.opacity = 0.2 + scrollValue/3000;
-  if (scrollValue > 1900){
+  //ideally, it would translate in Y
+  //when scrollY = 1600, the yposition of the clock = 1600
+  //when scrollY = 1650, the yposition of the clock = 1600
+  if (scrollValue > 1500){
+    var currentYpos = scrollValue/scrollValue; //1500/1500=1
+    var ypos = ypos + currentYpos;
+    clock.style.transform = "translate(-50%, " + //calculation of the Yposition + "%";
+
   } else {
-    clock.style.backgroundColor = "white";
+    clock.style.display = "inline";
+    clock.style.transform ="translate(-50%, -50%)";
   }
 }
