@@ -69,8 +69,28 @@ document.body.onscroll = function (event){
 
   var clock = document.querySelector("div.clock");
   clock.style.opacity = 0.2 + scrollValue/3000;
-  if (scrollValue > 1900){
-  } else {
-    clock.style.backgroundColor = "white";
-  }
 }
+
+
+var windw = this;
+
+$.fn.followTo = function ( pos ) {
+    var $this = this,
+        $window = $(windw);
+
+    $window.scroll(function(e){
+        if ($window.scrollTop() > pos) {
+            $this.css({
+                position: 'absolute',
+                top: pos
+            });
+        } else {
+            $this.css({
+                position: 'fixed',
+                top: 0
+            });
+        }
+    });
+};
+
+$('.clock').followTo(2100);

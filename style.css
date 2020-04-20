@@ -100,9 +100,9 @@ sup{
   border-radius: 50vh;
   position: fixed;
   display: inline;
-  top: 50vh;
-  left: 50vw;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  transform: translate(50%, 0%);
   opacity: 0.2;
 }
 .hand, .fhand{
