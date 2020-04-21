@@ -60,8 +60,7 @@ function runClock() {
 //as soon as we run the page, it will run the function
 runClock();
 
-
-
+//trying to imitate map() function for the opacity of the clock
 document.body.onscroll = function (event){
   //var container = document.getElementById("container");
   //var y = container.scrollTop();
@@ -71,7 +70,7 @@ document.body.onscroll = function (event){
   clock.style.opacity = 0.2 + scrollValue/3000;
 }
 
-
+//fixed position of the clock until a certain point
 var windw = this;
 
 $.fn.followTo = function ( pos ) {
@@ -94,3 +93,4 @@ $.fn.followTo = function ( pos ) {
 };
 
 $('.clock').followTo(1950);
+$('h1').followTo(550);
