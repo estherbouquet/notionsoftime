@@ -7,33 +7,20 @@
 }
 
 h1{
-  /*
-  //big bold
-  text-align: center;
-  font-size: 110pt;
-  position: relative;
+  text-align: left;
+  font-size: 120pt;
+  position: fixed;
   width: 99vw;
   margin: 0;
-  height: 100vh;
+  /* height: 100vh; */
   align-items: center;
   display: grid;
   margin-bottom: 50vh;
-  */
-
-  text-align: left;
-    font-size: 120pt;
-    position: fixed;
-    width: 99vw;
-    margin: 0;
-    /* height: 100vh; */
-    align-items: center;
-    display: grid;
-    margin-bottom: 50vh;
-    line-height: 1em;
-    font-weight: 500;
-    left: 3vw;
-    top: 3vh;
-    margin-bottom: 110vh;
+  line-height: 1em;
+  font-weight: 500;
+  left: 3vw;
+  top: 3vh;
+  margin-bottom: 110vh;
 }
 
 .intro{
