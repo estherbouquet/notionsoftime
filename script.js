@@ -70,10 +70,11 @@ document.body.onscroll = function (event){
   clock.style.opacity = 0.2 + scrollValue/3000;
 }
 
-//fixed position of the clock until a certain point
+//fixed position of the clock and h1 until a certain point
+//to be optimized in the near future
 var windw = this;
 
-$.fn.followTo = function ( pos ) {
+$.fn.clockFollowTo = function ( pos ) {
     var $this = this,
         $window = $(windw);
 
@@ -92,5 +93,26 @@ $.fn.followTo = function ( pos ) {
     });
 };
 
-$('.clock').followTo(1950);
-$('h1').followTo(550);
+$.fn.h1FollowTo = function ( pos ) {
+    var $this = this,
+        $window = $(windw);
+
+    $window.scroll(function(e){
+        if ($window.scrollTop() > pos) {
+            $this.css({
+                position: 'absolute',
+                top: pos
+            });
+        } else {
+            $this.css({
+                position: 'fixed',
+                top: 3+"vh"
+            });
+        }
+    });
+};
+
+
+
+$('.clock').clockFollowTo(1950);
+$('h1').h1FollowTo(550);
