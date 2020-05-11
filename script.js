@@ -106,8 +106,7 @@ $.fn.introFollowTo = function ( pos ) {
         } else {
             $this.css({
                 position: 'fixed',
-                top: 50+'%',
-                transform: 'translate(0%, -50%);'
+                top: 50+'vh'
             });
         }
     });
@@ -116,4 +115,4 @@ $.fn.introFollowTo = function ( pos ) {
 
 
 $('.clock').clockFollowTo(1950);
-$('.intro').introFollowTo(250);
+$('.intro').introFollowTo(550);

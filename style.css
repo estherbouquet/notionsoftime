@@ -13,15 +13,14 @@ img{
   /* height: 100vh; */
   left: 3vw;
   top: 3vw;
-  margin-bottom: 110vh;
 }
 
 .intro{
   color: darkolivegreen;
   opacity: 1;
+  top: 50vh;
+  left: 50vw;
   position: fixed;
-  top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
   font-size: 1.7vw;
 }
@@ -53,6 +52,7 @@ padding-left: 17.5vw;
   border-left: 4px double black;
   border-right: 4px double black;
   padding: 0.5vw;
+  margin-bottom: 200vh;
 }
 
 .quote > p{
@@ -69,6 +69,10 @@ padding-left: 17.5vw;
 }
 .transparent{
   color: transparent;
+}
+
+.development{
+  position: relative;
 }
 
 .clock{
