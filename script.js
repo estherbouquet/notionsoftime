@@ -93,7 +93,7 @@ $.fn.clockFollowTo = function ( pos ) {
     });
 };
 
-$.fn.h1FollowTo = function ( pos ) {
+$.fn.introFollowTo = function ( pos ) {
     var $this = this,
         $window = $(windw);
 
@@ -106,7 +106,8 @@ $.fn.h1FollowTo = function ( pos ) {
         } else {
             $this.css({
                 position: 'fixed',
-                top: 3+"vh"
+                top: 50+'%',
+                transform: 'translate(0%, -50%);'
             });
         }
     });
@@ -115,4 +116,4 @@ $.fn.h1FollowTo = function ( pos ) {
 
 
 $('.clock').clockFollowTo(1950);
-$('h1').h1FollowTo(550);
+$('.intro').introFollowTo(250);

@@ -6,97 +6,74 @@
   padding: 0;
 }
 
-h1{
-  text-align: left;
-  font-size: 120pt;
+img{
   position: fixed;
-  width: 99vw;
+  width: 28vw;
   margin: 0;
   /* height: 100vh; */
-  align-items: center;
-  display: grid;
-  margin-bottom: 50vh;
-  line-height: 1em;
-  font-weight: 500;
   left: 3vw;
-  top: 3vh;
+  top: 3vw;
   margin-bottom: 110vh;
 }
 
 .intro{
+  color: darkolivegreen;
+  opacity: 1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.7vw;
+}
+
+.intro > p {
+  margin-bottom: 0.5vh;
+}
+
+#line2{
+padding-left: 10vw;
+}
+#line3{
+padding-left: 4vw;
+}
+#line4{
+padding-left: 17.5vw;
+}
+
+.quote{
+  position: relative;
+  display: block;
   margin-top: 100vh;
-}
-
-p.intro1{
-  font-size: 55pt;
-  /*width: 50vw;*/
-  display: block;
-  /*text-align: center;*/
-  position: relative;
-  /*transform: translateX(50%);*/
-  line-height: 1.3em;
-  width: 69vw;
-  hyphens: none;
-  left: 3vw;
-}
-
-p.intro2{
-  padding-top: 2vh;
-  font-size: 55pt;
-  display: block;
-  position: relative;
-  line-height: 1.3em;
-  width: 70vw;
-  left: 18vw;
-  hyphens: none;
-}
-
-p.intro3{
-  font-size: 55pt;
-  display: block;
-  position: relative;
-  line-height: 1.3em;
-  width: 70vw;
-  left: 23vw;
-  hyphens: none;
-}
-
-p.intro4{
-  padding-top: 3vh;
-  font-size: 55pt;
-  display: block;
-  position: relative;
-  line-height: 1.3em;
   width: 80vw;
-  left: 2vw;
+  margin-left: auto;
+  margin-right: auto;
   hyphens: none;
+  column-count: 2;
+  column-gap: 2vw;
+  column-rule-style: double;
+  column-rule-width: 3px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+}
+
+.quote > p{
+  font-size: 1.5vw;
+  line-height: 1.9vw;
+  text-align: justify;
+}
+.indent{
+  display: inline-block;
+  margin-left: 3em;
+}
+.author{
   text-align: right;
 }
-p.intro5{
-  font-size: 55pt;
-  display: block;
-  position: relative;
-  line-height: 1.3em;
-  width: 80vw;
-  left: 18vw;
-  hyphens: none;
+.transparent{
+  color: transparent;
 }
 
-sup{
-  vertical-align: super;
-  font-size: 17pt;
-}
-.auteur{
-  font-size: 35pt;
-  display: block;
-  position: relative;
-  line-height: 1.3em;
-  text-align: right;
-  right: 3vw;
-  hyphens: none;
-  padding-top: 5vh;
-  margin-bottom: 100vh;
-}
 .clock{
   /*size of the clock*/
   width: 99vh;
