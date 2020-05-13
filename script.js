@@ -1,18 +1,6 @@
-//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-// When the user scrolls down 50px from the top of the document, resize the title's image size
-//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-//function scrollFunction() {
-//  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-//    document.querySelector("img").style.width = "14vw";
-//  } else {
-//    document.querySelector("img").style.width = "28vw";
-//  }
-//}
-
-//window.onscroll = function() {scrollFunction()};
-
-//Map function (copied from openframeworks lol)
+//- - - - - - - - - - - - - - - - - - - - - - - -
+// Map function (copied from openframeworks lol)
+//- - - - - - - - - - - - - - - - - - - - - - - -
 function ofMap(value, inputMin, inputMax, outputMin, outputMax, clamp){
 
   if (Math. abs(inputMin - inputMax) < Number.EPSILON){
@@ -33,9 +21,15 @@ function ofMap(value, inputMin, inputMax, outputMin, outputMax, clamp){
   }
 }
 
-// When the user scrolls, map the scrollValue to control the clock's opacity
+//- - - - - - - - - - - - - - - - - - -
+// Scroll function
+//- - - - - - - - - - - - - - - - - - -
 document.body.onscroll = function (event){
-  var offsetHeight = document.querySelector("html").offsetHeight; // get the inputMax value (size of the html div for now | will need to change it)
+
+  // For the opacity of the clock, between 0 and 1 (outputMin & Max)
+  //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  var offsetHeight = document.querySelector("html").offsetHeight; // size of the html div for now as inputMax but will need to change it
+  var clock = document.querySelector("div.clock");
 
   var inputMin = 0;
   var inputMax = offsetHeight;
@@ -43,29 +37,29 @@ document.body.onscroll = function (event){
   var outputMax = 1;
   var clamp = true;
 
-  var scrollValue = window.scrollY;
-  var clock = document.querySelector("div.clock");
-  // we call the function ofMap
-  var opacityValue = ofMap(scrollValue, inputMin, inputMax, outputMin, outputMax, clamp);
+  var scrollValue = window.scrollY; //value of the vertical scroll
 
-  //console.log("combien esh:"+combien);
-  clock.style.opacity = opacityValue;
+  var opacityValue = ofMap(scrollValue, inputMin, inputMax, outputMin, outputMax, clamp); //the value returned by the ofMap function is the opacity we want
+  clock.style.opacity = opacityValue; //push it to the css
 
+  // For resizing the title's image size
+  //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   function scrollFunction() {
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-      document.querySelector("img").style.width = "14vw";
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) { //scroll > 50px,
+      document.querySelector("img").style.width = "14vw"; //shrink
     } else {
       document.querySelector("img").style.width = "28vw";
     }
   }
-  scrollFunction();
+
+  scrollFunction(); //don't forget to call the function!
 }
 
+//- - - - - - - - - - - - - - - - - - - - - - - -
+// Clock function
 
-
-//moving the hands based on the browser's time
-//having the animation that checks the time, updates the rotation and runs all the time
-
+//moving the hands based on the browser's time, having the animation that checks the time, updates the rotation and runs all the time
+//- - - - - - - - - - - - - - - - - - - - - - - -
 function runClock() {
 
   //first get the time and date
@@ -122,18 +116,7 @@ function runClock() {
   requestAnimationFrame(runClock);
 }
 
-//as soon as we run the page, it will run the function
-runClock();
-
-//trying to imitate map() function for the opacity of the clock
-//document.body.onscroll = function (event){
-//var container = document.getElementById("container");
-//var y = container.scrollTop();
-//  var scrollValue = window.scrollY;
-
-//  var clock = document.querySelector("div.clock");
-//  clock.style.opacity = 0.2 + scrollValue/3000;
-//}
+runClock(); //as soon as we run the page, it will run the function
 
 //fixed position of the clock and h1 until a certain point
 //to be optimized in the near future
