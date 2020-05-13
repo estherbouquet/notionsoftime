@@ -10,6 +10,50 @@ function scrollFunction() {
 }
 
 
+function ofMap(value, inputMin, inputMax, outputMin, outputMax, clamp){
+  //DEBUG
+  //console.log("scrollValue:" + scrollValue + " inputMin:" + inputMin + " inputMax:" + inputMax + " outputMin:" + outputMin + " outputMax:" + outputMax + " clamp:" + clamp);
+  //var outVal = scrollValue+inputMax;
+  //return outVal;
+
+  if (Math. abs(inputMin - inputMax) < Number.EPSILON){
+    return outputMin;
+  } else {
+    var outVal = ((value - inputMin) / (inputMax - inputMin) * (outputMax - outputMin) + outputMin);
+
+    if( clamp ){
+      if(outputMax < outputMin){
+        if( outVal < outputMax )outVal = outputMax;
+        else if( outVal > outputMin )outVal = outputMin;
+      }else{
+        if( outVal > outputMax )outVal = outputMax;
+        else if( outVal < outputMin )outVal = outputMin;
+      }
+    }
+    return outVal;
+  }
+}
+
+
+document.body.onscroll = function (event){
+
+  var scrollValue = window.scrollY;
+  var inputMin = 0;
+  var inputMax = 8000;
+  var outputMin = 0;
+  var outputMax = 1;
+  var clamp = true;
+
+  var clock = document.querySelector("div.clock");
+
+  var combien = ofMap(scrollValue, inputMin, inputMax, outputMin, outputMax, clamp);
+
+  //console.log("combien esh:"+combien);
+  clock.style.opacity = combien;
+
+}
+
+
 //moving the hands based on the browser's time
 //having the animation that checks the time, updates the rotation and runs all the time
 
