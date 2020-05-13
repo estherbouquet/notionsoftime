@@ -9,7 +9,7 @@ function scrollFunction() {
   }
 }
 
-
+//Map function
 function ofMap(value, inputMin, inputMax, outputMin, outputMax, clamp){
   //DEBUG
   //console.log("scrollValue:" + scrollValue + " inputMin:" + inputMin + " inputMax:" + inputMax + " outputMin:" + outputMin + " outputMax:" + outputMax + " clamp:" + clamp);
@@ -30,28 +30,32 @@ function ofMap(value, inputMin, inputMax, outputMin, outputMax, clamp){
         else if( outVal < outputMin )outVal = outputMin;
       }
     }
-    return outVal;
+    return outVal; //value of opacity we want
   }
 }
 
+// get the inputMax value (size of the html div for now | will need to change it)
+var offsetHeight = document.querySelector("html").offsetHeight;
 
+var inputMin = 0;
+var inputMax = offsetHeight;
+var outputMin = 0;
+var outputMax = 1;
+var clamp = true;
+
+// on scroll, map the scrollValue to control the clock's opacity
 document.body.onscroll = function (event){
 
   var scrollValue = window.scrollY;
-  var inputMin = 0;
-  var inputMax = 8000;
-  var outputMin = 0;
-  var outputMax = 1;
-  var clamp = true;
-
   var clock = document.querySelector("div.clock");
-
-  var combien = ofMap(scrollValue, inputMin, inputMax, outputMin, outputMax, clamp);
+  // we call the function ofMap
+  var opacityValue = ofMap(scrollValue, inputMin, inputMax, outputMin, outputMax, clamp);
 
   //console.log("combien esh:"+combien);
-  clock.style.opacity = combien;
+  clock.style.opacity = opacityValue;
 
 }
+
 
 
 //moving the hands based on the browser's time
