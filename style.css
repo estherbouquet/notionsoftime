@@ -19,12 +19,14 @@ img{
 .intro{
   color: darkolivegreen;
   opacity: 1;
-  top: 0vh;
-  left: 50vw;
-  position: fixed;
-  /*multiple transform one line directives are applied from right to left.*/
-  transform: translate(0, 50vh) translate(-50%, -50%);
+  top: 4vh;
+  left: 0;
+  position: sticky;
   font-size: 1.7vw;
+  /*background-color: orange;*/
+  display: inline-block;
+  transform: translate(0,50vh) translate(50vw,0) translate(-50%, -75%);
+  margin-bottom: 71vh;
 }
 
 .intro > p {
@@ -44,7 +46,7 @@ padding-left: 17.5vw;
 .quote{
   position: relative;
   display: block;
-  margin-top: 100vh;
+  margin-top: 30vh;
   width: 50vw;
   margin-left: auto;
   margin-right: auto;
@@ -181,20 +183,17 @@ p.question{
 }
 
 .clock{
-  /*size of the clock*/
   width: 99vh;
   height: 99vh;
-  /*bkgnd col of the clock*/
-  /*background-color: none;*/
-  /*border: solid 2px black;*/
-  /*to make the square of the div a circle*/
   border-radius: 50vh;
-  position: fixed;
+  position: sticky;
   display: inline;
   top: 0;
   left: 0;
   transform: translate(50%, 0%);
-  opacity: 0.2;
+  opacity: 1;
+  display: block;
+  margin-bottom: -95vh;
 }
 .hand, .fhand{
   /*basic dimensions*/

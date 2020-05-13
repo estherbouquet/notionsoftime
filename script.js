@@ -1,3 +1,4 @@
+/*
 //- - - - - - - - - - - - - - - - - - - - - - - -
 // Map function (copied from openframeworks lol)
 //- - - - - - - - - - - - - - - - - - - - - - - -
@@ -20,7 +21,7 @@ function ofMap(value, inputMin, inputMax, outputMin, outputMax, clamp){
     return outVal; //value of opacity we want
   }
 }
-
+*/
 //- - - - - - - - - - - - - - - - - - -
 // Scroll function
 //- - - - - - - - - - - - - - - - - - -
@@ -39,8 +40,8 @@ document.body.onscroll = function (event){
 
   var scrollValue = window.scrollY; //value of the vertical scroll
 
-  var opacityValue = ofMap(scrollValue, inputMin, inputMax, outputMin, outputMax, clamp); //the value returned by the ofMap function is the opacity we want
-  clock.style.opacity = opacityValue; //push it to the css
+  //var opacityValue = ofMap(scrollValue, inputMin, inputMax, outputMin, outputMax, clamp); //the value returned by the ofMap function is the opacity we want
+  //clock.style.opacity = opacityValue; //push it to the css
 
   // For resizing the title's image size
   //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -117,48 +118,3 @@ function runClock() {
 }
 
 runClock(); //as soon as we run the page, it will run the function
-
-//fixed position of the clock and h1 until a certain point
-//to be optimized in the near future
-var windw = this;
-
-$.fn.clockFollowTo = function ( pos ) {
-  var $this = this,
-  $window = $(windw);
-
-  $window.scroll(function(e){
-    if ($window.scrollTop() > pos) {
-      $this.css({
-        position: 'absolute',
-        top: pos
-      });
-    } else {
-      $this.css({
-        position: 'fixed',
-        top: 0
-      });
-    }
-  });
-};
-
-$.fn.introFollowTo = function ( pos ) {
-  var $this = this,
-  $window = $(windw);
-
-  $window.scroll(function(e){
-    if ($window.scrollTop() > pos) {
-      $this.css({
-        position: 'absolute',
-        top: pos
-      });
-    } else {
-      $this.css({
-        position: 'fixed',
-        top: 0+'vh'
-      });
-    }
-  });
-};
-
-$('.clock').clockFollowTo(5550);
-$('.intro').introFollowTo(350);
