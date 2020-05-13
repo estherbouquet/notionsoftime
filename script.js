@@ -1,20 +1,19 @@
-// When the user scrolls down 50px from the top of the document, resize the title's size
-window.onscroll = function() {scrollFunction()};
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// When the user scrolls down 50px from the top of the document, resize the title's image size
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-function scrollFunction() {
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    document.querySelector("img").style.width = "14vw";
-  } else {
-    document.querySelector("img").style.width = "28vw";
-  }
-}
+//function scrollFunction() {
+//  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+//    document.querySelector("img").style.width = "14vw";
+//  } else {
+//    document.querySelector("img").style.width = "28vw";
+//  }
+//}
 
-//Map function
+//window.onscroll = function() {scrollFunction()};
+
+//Map function (copied from openframeworks lol)
 function ofMap(value, inputMin, inputMax, outputMin, outputMax, clamp){
-  //DEBUG
-  //console.log("scrollValue:" + scrollValue + " inputMin:" + inputMin + " inputMax:" + inputMax + " outputMin:" + outputMin + " outputMax:" + outputMax + " clamp:" + clamp);
-  //var outVal = scrollValue+inputMax;
-  //return outVal;
 
   if (Math. abs(inputMin - inputMax) < Number.EPSILON){
     return outputMin;
@@ -34,17 +33,15 @@ function ofMap(value, inputMin, inputMax, outputMin, outputMax, clamp){
   }
 }
 
-// get the inputMax value (size of the html div for now | will need to change it)
-var offsetHeight = document.querySelector("html").offsetHeight;
-
-var inputMin = 0;
-var inputMax = offsetHeight;
-var outputMin = 0;
-var outputMax = 1;
-var clamp = true;
-
-// on scroll, map the scrollValue to control the clock's opacity
+// When the user scrolls, map the scrollValue to control the clock's opacity
 document.body.onscroll = function (event){
+  var offsetHeight = document.querySelector("html").offsetHeight; // get the inputMax value (size of the html div for now | will need to change it)
+
+  var inputMin = 0;
+  var inputMax = offsetHeight;
+  var outputMin = 0;
+  var outputMax = 1;
+  var clamp = true;
 
   var scrollValue = window.scrollY;
   var clock = document.querySelector("div.clock");
@@ -54,6 +51,14 @@ document.body.onscroll = function (event){
   //console.log("combien esh:"+combien);
   clock.style.opacity = opacityValue;
 
+  function scrollFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      document.querySelector("img").style.width = "14vw";
+    } else {
+      document.querySelector("img").style.width = "28vw";
+    }
+  }
+  scrollFunction();
 }
 
 
