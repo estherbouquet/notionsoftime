@@ -1,6 +1,65 @@
-//moving the hands based on the browser's time
-//having the animation that checks the time, updates the rotation and runs all the time
+//- - - - - - - - - - - - - - - - - - - - - - - -
+// Map function (copied from openframeworks lol)
+//- - - - - - - - - - - - - - - - - - - - - - - -
+function ofMap(value, inputMin, inputMax, outputMin, outputMax, clamp){
 
+  if (Math. abs(inputMin - inputMax) < Number.EPSILON){
+    return outputMin;
+  } else {
+    var outVal = ((value - inputMin) / (inputMax - inputMin) * (outputMax - outputMin) + outputMin);
+
+    if( clamp ){
+      if(outputMax < outputMin){
+        if( outVal < outputMax )outVal = outputMax;
+        else if( outVal > outputMin )outVal = outputMin;
+      }else{
+        if( outVal > outputMax )outVal = outputMax;
+        else if( outVal < outputMin )outVal = outputMin;
+      }
+    }
+    return outVal; //value of opacity we want
+  }
+}
+
+//- - - - - - - - - - - - - - - - - - -
+// Scroll function
+//- - - - - - - - - - - - - - - - - - -
+document.body.onscroll = function (event){
+
+  // For the opacity of the clock, between 0 and 1 (outputMin & Max)
+  //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  var offsetHeight = document.querySelector("html").offsetHeight; // size of the html div for now as inputMax but will need to change it
+  var clock = document.querySelector("div.clock");
+
+  var inputMin = 0;
+  var inputMax = offsetHeight;
+  var outputMin = 0;
+  var outputMax = 1;
+  var clamp = true;
+
+  var scrollValue = window.scrollY; //value of the vertical scroll
+
+  var opacityValue = ofMap(scrollValue, inputMin, inputMax, outputMin, outputMax, clamp); //the value returned by the ofMap function is the opacity we want
+  clock.style.opacity = opacityValue; //push it to the css
+
+  // For resizing the title's image size
+  //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  function scrollFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) { //scroll > 50px,
+      document.querySelector("img").style.width = "14vw"; //shrink
+    } else {
+      document.querySelector("img").style.width = "28vw";
+    }
+  }
+
+  scrollFunction(); //don't forget to call the function!
+}
+
+//- - - - - - - - - - - - - - - - - - - - - - - -
+// Clock function
+
+//moving the hands based on the browser's time, having the animation that checks the time, updates the rotation and runs all the time
+//- - - - - - - - - - - - - - - - - - - - - - - -
 function runClock() {
 
   //first get the time and date
@@ -57,62 +116,4 @@ function runClock() {
   requestAnimationFrame(runClock);
 }
 
-//as soon as we run the page, it will run the function
-runClock();
-
-//trying to imitate map() function for the opacity of the clock
-document.body.onscroll = function (event){
-  //var container = document.getElementById("container");
-  //var y = container.scrollTop();
-  var scrollValue = window.scrollY;
-
-  var clock = document.querySelector("div.clock");
-  clock.style.opacity = 0.2 + scrollValue/3000;
-}
-
-//fixed position of the clock and h1 until a certain point
-//to be optimized in the near future
-var windw = this;
-
-$.fn.clockFollowTo = function ( pos ) {
-    var $this = this,
-        $window = $(windw);
-
-    $window.scroll(function(e){
-        if ($window.scrollTop() > pos) {
-            $this.css({
-                position: 'absolute',
-                top: pos
-            });
-        } else {
-            $this.css({
-                position: 'fixed',
-                top: 0
-            });
-        }
-    });
-};
-
-$.fn.h1FollowTo = function ( pos ) {
-    var $this = this,
-        $window = $(windw);
-
-    $window.scroll(function(e){
-        if ($window.scrollTop() > pos) {
-            $this.css({
-                position: 'absolute',
-                top: pos
-            });
-        } else {
-            $this.css({
-                position: 'fixed',
-                top: 3+"vh"
-            });
-        }
-    });
-};
-
-
-
-$('.clock').clockFollowTo(1950);
-$('h1').h1FollowTo(550);
+runClock(); //as soon as we run the page, it will run the function
