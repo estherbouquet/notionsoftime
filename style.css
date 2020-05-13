@@ -211,7 +211,9 @@ p.question{
   display: inline;
   top: 0;
   left: 0;
-  transform: translate(50%, 0%);
+  transform: translate(50vw, 50vh) translate(-50%, -50%);
+  border-right: 1px solid rgb(255, 255, 255);
+  /*background-color: green;*/
   opacity: 0;
   display: block;
   margin-bottom: -95vh;
