@@ -10,19 +10,6 @@ function scrollFunction() {
 }
 
 
-//document.body.onscroll = function (event){
-  //var container = document.getElementById("container");
-  //var y = container.scrollTop();
-//  var scrollValue = window.scrollY;
-
-//  var clock = document.querySelector("div.clock");
-//  clock.style.opacity = 0.2 + scrollValue/3000;
-//}
-
-
-
-
-
 //moving the hands based on the browser's time
 //having the animation that checks the time, updates the rotation and runs all the time
 
@@ -87,8 +74,8 @@ runClock();
 
 //trying to imitate map() function for the opacity of the clock
 //document.body.onscroll = function (event){
-  //var container = document.getElementById("container");
-  //var y = container.scrollTop();
+//var container = document.getElementById("container");
+//var y = container.scrollTop();
 //  var scrollValue = window.scrollY;
 
 //  var clock = document.querySelector("div.clock");
@@ -100,41 +87,41 @@ runClock();
 var windw = this;
 
 $.fn.clockFollowTo = function ( pos ) {
-    var $this = this,
-        $window = $(windw);
+  var $this = this,
+  $window = $(windw);
 
-    $window.scroll(function(e){
-        if ($window.scrollTop() > pos) {
-            $this.css({
-                position: 'absolute',
-                top: pos
-            });
-        } else {
-            $this.css({
-                position: 'fixed',
-                top: 0
-            });
-        }
-    });
+  $window.scroll(function(e){
+    if ($window.scrollTop() > pos) {
+      $this.css({
+        position: 'absolute',
+        top: pos
+      });
+    } else {
+      $this.css({
+        position: 'fixed',
+        top: 0
+      });
+    }
+  });
 };
 
 $.fn.introFollowTo = function ( pos ) {
-    var $this = this,
-        $window = $(windw);
+  var $this = this,
+  $window = $(windw);
 
-    $window.scroll(function(e){
-        if ($window.scrollTop() > pos) {
-            $this.css({
-                position: 'absolute',
-                top: pos
-            });
-        } else {
-            $this.css({
-                position: 'fixed',
-                top: 0+'vh'
-            });
-        }
-    });
+  $window.scroll(function(e){
+    if ($window.scrollTop() > pos) {
+      $this.css({
+        position: 'absolute',
+        top: pos
+      });
+    } else {
+      $this.css({
+        position: 'fixed',
+        top: 0+'vh'
+      });
+    }
+  });
 };
 
 $('.clock').clockFollowTo(5550);
