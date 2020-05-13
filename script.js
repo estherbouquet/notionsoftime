@@ -1,4 +1,3 @@
-/*
 //- - - - - - - - - - - - - - - - - - - - - - - -
 // Map function (copied from openframeworks lol)
 //- - - - - - - - - - - - - - - - - - - - - - - -
@@ -21,7 +20,7 @@ function ofMap(value, inputMin, inputMax, outputMin, outputMax, clamp){
     return outVal; //value of opacity we want
   }
 }
-*/
+
 //- - - - - - - - - - - - - - - - - - -
 // Scroll function
 //- - - - - - - - - - - - - - - - - - -
@@ -40,8 +39,8 @@ document.body.onscroll = function (event){
 
   var scrollValue = window.scrollY; //value of the vertical scroll
 
-  //var opacityValue = ofMap(scrollValue, inputMin, inputMax, outputMin, outputMax, clamp); //the value returned by the ofMap function is the opacity we want
-  //clock.style.opacity = opacityValue; //push it to the css
+  var opacityValue = ofMap(scrollValue, inputMin, inputMax, outputMin, outputMax, clamp); //the value returned by the ofMap function is the opacity we want
+  clock.style.opacity = opacityValue; //push it to the css
 
   // For resizing the title's image size
   //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

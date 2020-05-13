@@ -7,6 +7,27 @@
   font-variant-ligatures: discretionary-ligatures;
 }
 
+h2{
+  font-weight: normal;
+  display: inline-block;
+  border-top: 1px solid darkolivegreen;
+  border-bottom: 1px solid darkolivegreen;
+  /*border-radius: 50px;*/
+  padding: 1vw;
+  font-size: 1.8vw;
+  margin-left: 4vw;
+  margin-right: 4vw;
+  text-shadow: 2px 2px 5px grey;
+  color: darkolivegreen;
+}
+
+h2:hover{
+  text-shadow: 2px 2px 3px darkolivegreen;
+}
+.button{
+  text-align: center;
+}
+
 img{
   position: fixed;
   width: 28vw;
@@ -46,7 +67,7 @@ padding-left: 17.5vw;
 .quote{
   position: relative;
   display: block;
-  margin-top: 30vh;
+  margin-top: 20vh;
   width: 50vw;
   margin-left: auto;
   margin-right: auto;
@@ -191,7 +212,7 @@ p.question{
   top: 0;
   left: 0;
   transform: translate(50%, 0%);
-  opacity: 1;
+  opacity: 0;
   display: block;
   margin-bottom: -95vh;
 }
