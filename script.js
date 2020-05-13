@@ -1,3 +1,28 @@
+// When the user scrolls down 50px from the top of the document, resize the title's size
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.querySelector("img").style.width = "14vw";
+  } else {
+    document.querySelector("img").style.width = "28vw";
+  }
+}
+
+
+//document.body.onscroll = function (event){
+  //var container = document.getElementById("container");
+  //var y = container.scrollTop();
+//  var scrollValue = window.scrollY;
+
+//  var clock = document.querySelector("div.clock");
+//  clock.style.opacity = 0.2 + scrollValue/3000;
+//}
+
+
+
+
+
 //moving the hands based on the browser's time
 //having the animation that checks the time, updates the rotation and runs all the time
 

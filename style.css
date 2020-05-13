@@ -12,6 +12,7 @@ img{
   margin: 0;
   left: 3vw;
   top: 3vw;
+  transition: 0.7s;
 }
 
 .intro{
