@@ -61,14 +61,14 @@ function runClock() {
 runClock();
 
 //trying to imitate map() function for the opacity of the clock
-document.body.onscroll = function (event){
+//document.body.onscroll = function (event){
   //var container = document.getElementById("container");
   //var y = container.scrollTop();
-  var scrollValue = window.scrollY;
+//  var scrollValue = window.scrollY;
 
-  var clock = document.querySelector("div.clock");
-  clock.style.opacity = 0.2 + scrollValue/3000;
-}
+//  var clock = document.querySelector("div.clock");
+//  clock.style.opacity = 0.2 + scrollValue/3000;
+//}
 
 //fixed position of the clock and h1 until a certain point
 //to be optimized in the near future
@@ -112,7 +112,5 @@ $.fn.introFollowTo = function ( pos ) {
     });
 };
 
-
-
-$('.clock').clockFollowTo(1950);
+$('.clock').clockFollowTo(5550);
 $('.intro').introFollowTo(350);
