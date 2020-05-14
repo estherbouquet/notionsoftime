@@ -19,6 +19,8 @@ h2{
   margin-right: 4vw;
   text-shadow: 2px 2px 5px grey;
   color: darkolivegreen;
+  transform: translate(0, -50%);
+  /*background-color: seagreen;*/
 }
 
 h2:hover{
@@ -26,6 +28,22 @@ h2:hover{
 }
 .button{
   text-align: center;
+  padding-top: 15vh;
+}
+.wrapperoflove2{
+  margin-bottom: 100vh;
+}
+
+.stickytext{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50vh;
+  /*background-color: slateblue;*/
+}
+
+.fakespace{
+  padding-bottom: 40vh;
+  /*background-color: turquoise;*/
 }
 
 img{
@@ -117,6 +135,8 @@ p.question{
   margin-top: 30vh;
   margin-bottom:100vh;
 }
+
+
 
 .stickytest > #devl1, #devl2, #devl3, #devl4{
   font-size: 2vw;
