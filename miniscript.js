@@ -63,12 +63,20 @@ document.body.onscroll = function (event){
     console.log(windw);
 
     if (windw < 600){
-      if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) { //scroll > 50px,
+      if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) { //scroll > 50px,
         document.querySelector("img").style.width = "35vw"; //shrink
         document.querySelector("img").style.transform = "translate(3vw, 0)"; //translate to the corner
-      } else {
+        document.querySelector("img").style.position = "sticky";
+        if (opacityValue = 1){
+          document.querySelector("img").style.width = "35vw";
+          document.querySelector("img").style.transform = "translate(3vw, 0)";
+          document.querySelector("img").style.position = "fixed";
+          document.querySelector("img").style.marginTop = "0px";
+        }
+      }  else {
         document.querySelector("img").style.width = "60vw";
         document.querySelector("img").style.transform = "translate(50vw,0) translate(-50%, 0)";
+        document.querySelector("img").style.position = "sticky";
       }
     } else {
       if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) { //scroll > 50px,
