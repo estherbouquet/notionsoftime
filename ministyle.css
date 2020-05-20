@@ -144,7 +144,7 @@ p.question{
 
 .development-left, .development-right{
   display: block;
-  width: 60vw;
+  width: 63vw;
   font-size: 3vw;
   line-height: normal;
   hyphens: none;
@@ -160,15 +160,16 @@ p.question{
 }
 
 .development-right{
-  width: 50vw;
+  width: 63vw;
   position: -webkit-sticky;
   position: sticky;
   top: 70vh;
-  transform: translate(40vw, 0);
+  transform: translate(30vw, 0);
 }
 
 .development{
   margin-bottom: 2vh;
+  hyphens: none;
 }
 
 .fin{
