@@ -63,6 +63,7 @@ padding-left: 48.5vw;
 
 .quote > p{
   font-size: 3vw;
+  line-height: normal;
   text-align: justify;
 }
 
@@ -145,6 +146,7 @@ p.question{
   display: block;
   width: 60vw;
   font-size: 3vw;
+  line-height: normal;
   hyphens: none;
   /*background-color: orange;*/
 }

@@ -118,6 +118,13 @@ p.question{
   margin-bottom:100vh;
 }
 
+.stickytext{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50vh;
+  /*background-color: slateblue;*/
+}
+
 .stickytest > #devl1, #devl2, #devl3, #devl4{
   font-size: 2vw;
   hyphens: none;
@@ -263,6 +270,11 @@ p.question{
 
 .fakesec{
   height: 48vh;
+}
+
+.fakespace{
+  padding-bottom: 100vh;
+  /*background-color: turquoise;*/
 }
 
 @font-face {
