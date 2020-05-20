@@ -19,6 +19,8 @@ h2{
   margin-right: 4vw;
   text-shadow: 2px 2px 5px grey;
   color: darkolivegreen;
+  transform: translate(0, -50%);
+  /*background-color: seagreen;*/
 }
 
 h2:hover{
@@ -26,6 +28,22 @@ h2:hover{
 }
 .button{
   text-align: center;
+  padding-top: 15vh;
+}
+.wrapperoflove2{
+  margin-bottom: 100vh;
+}
+
+.stickytext{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50vh;
+  /*background-color: slateblue;*/
+}
+
+.fakespace{
+  padding-bottom: 40vh;
+  /*background-color: turquoise;*/
 }
 
 img{
@@ -200,7 +218,6 @@ p.question{
   line-height: 2.3vw;
 }
 .fin{
-  display: inline;
   font-size: 1.4vw;
   hyphens: none;
   line-height: 1.9vw;
@@ -218,7 +235,9 @@ p.question{
   display: inline;
   top: 0;
   left: 0;
-  transform: translate(50%, 0%);
+  transform: translate(50vw, 50vh) translate(-50%, -50%);
+  border-right: 1px solid rgb(255, 255, 255);
+  /*background-color: green;*/
   opacity: 0;
   display: block;
   margin-bottom: -95vh;
