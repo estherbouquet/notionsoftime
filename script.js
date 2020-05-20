@@ -28,7 +28,7 @@ document.body.onscroll = function (event){
 
   // For the opacity of the clock, between 0 and 1 (outputMin & Max)
   //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  var offsetHeight = document.querySelector("html").offsetHeight; // size of the html div for now as inputMax but will need to change it
+  var offsetHeight = document.querySelector("div.wrapperoflove").offsetHeight; // size of the html div for now as inputMax but will need to change it
   var clock = document.querySelector("div.clock");
 
   var inputMin = 0;
@@ -42,13 +42,48 @@ document.body.onscroll = function (event){
   var opacityValue = ofMap(scrollValue, inputMin, inputMax, outputMin, outputMax, clamp); //the value returned by the ofMap function is the opacity we want
   clock.style.opacity = opacityValue; //push it to the css
 
+  // For the rgb values of the clock's borders
+  //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  var rOutputMin = 255;
+  var rOutputMax = 150;
+  var rValue = ofMap(scrollValue, inputMin, inputMax, rOutputMin, rOutputMax, clamp);
+  rValue = Math.round(rValue);
+  clock.style.borderRight = "1px solid rgb(" + rValue + ", " + rValue + ", " + rValue + ")";
+
+  var boutputMin = 255;
+  var boutputMax = 200;
+  var bValue = ofMap(scrollValue, inputMin, inputMax, boutputMin, boutputMax, clamp);
+  bValue = Math.round(bValue);
+  clock.style.borderBottom = "1px solid rgb(" + bValue + ", " + bValue + ", " + bValue + ")";
+
   // For resizing the title's image size
   //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   function scrollFunction() {
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) { //scroll > 50px,
-      document.querySelector("img").style.width = "14vw"; //shrink
+    var windw = window.screen.width
+    console.log(windw);
+
+    if (windw < 600){
+      if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) { //scroll > 50px,
+        document.querySelector("img").style.width = "35vw"; //shrink
+        document.querySelector("img").style.transform = "translate(3vw, 0)"; //translate to the corner
+        document.querySelector("img").style.position = "sticky";
+        if (opacityValue = 1){
+          document.querySelector("img").style.width = "35vw";
+          document.querySelector("img").style.transform = "translate(3vw, 0)";
+          document.querySelector("img").style.position = "fixed";
+          document.querySelector("img").style.marginTop = "0px";
+        }
+      }  else {
+        document.querySelector("img").style.width = "60vw";
+        document.querySelector("img").style.transform = "translate(50vw,0) translate(-50%, 0)";
+        document.querySelector("img").style.position = "sticky";
+      }
     } else {
-      document.querySelector("img").style.width = "28vw";
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) { //scroll > 50px,
+        document.querySelector("img").style.width = "14vw"; //shrink
+      } else {
+        document.querySelector("img").style.width = "28vw";
+      }
     }
   }
 
