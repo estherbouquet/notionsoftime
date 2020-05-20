@@ -1,0 +1,300 @@
+*, body{
+  font-family: "gallique";
+  hyphens: auto;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  font-variant-ligatures: discretionary-ligatures;
+}
+
+img{
+  position: sticky;
+  width: 60vw;
+  margin: 0;
+  margin-top: 40vh;
+  left: 0vw;
+  top: 3vw;
+  transform: translate(50vw,0) translate(-50%, 0);
+  transition: 0.7s;
+  /*background-color: pink;*/
+  margin-bottom: -50vh;
+}
+
+.intro{
+  color: darkolivegreen;
+  opacity: 1;
+  top: 4vh;
+  left: 0;
+  position: sticky;
+  font-size: 4.7vw;
+  /*background-color: orange;*/
+  display: inline-block;
+  transform: translate(0,50vh) translate(50vw,0) translate(-50%, -75%);
+  margin-bottom: 61vh;
+  margin-top: 12vh;
+}
+
+.intro > p {
+  margin-bottom: 0.5vh;
+}
+
+#line2{
+padding-left: 28vw;
+}
+#line3{
+padding-left: 11vw;
+}
+#line4{
+padding-left: 48.5vw;
+}
+
+.quote{
+  position: relative;
+  display: block;
+  margin-top: 25vh;
+  width: 85vw;
+  margin-left: auto;
+  margin-right: auto;
+  column-count: 2;
+  column-gap: 3vw;
+  padding: 1vw;
+  margin-bottom: 20vh;
+}
+
+.quote > p{
+  font-size: 3vw;
+  line-height: normal;
+  text-align: justify;
+}
+
+.quote > p.author{
+  margin-top: 2vh;
+  column-span: all;
+  text-align: center;
+}
+
+.wrapper, .wrapper2, .wrapper3{
+  margin-left: 3vw;
+  margin-right: 3vw;
+  position: relative;
+  margin-top: 22vh;
+}
+
+.wrapper3{
+  margin-top: 30vh;
+  margin-bottom:100vh;
+}
+
+p.question{
+  font-size: 3vw;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 37vh;
+  margin-left: 40vw;
+  margin-bottom: 35vh;
+  text-align: right;
+  margin-right: 3vw;
+  /*background-color: yellow;*/
+}
+
+.stickytext{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50vh;
+  /*background-color: slateblue;*/
+}
+
+.stickytest > #devl1, #devl2, #devl3, #devl4{
+  font-size: 3.7vw;
+  hyphens: none;
+}
+
+#devl1{
+  margin-top: 35vh;
+  margin-left: 3vw;
+  padding-bottom: 46vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20vh;
+  /*background-color: blue;*/
+  z-index: -1000;
+  width: 59vw;
+}
+
+#devl2{
+  margin-left: 30vw;
+  padding-bottom: 24vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 52vh;
+  /*background-color: green;*/
+  margin-top: -10vh;
+  width: 60vw;
+}
+
+#devl3{
+  margin-left: 5vw;
+  width: 80vw;
+  padding-bottom: 16vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 73vh;
+  /*background-color: brown;*/
+}
+
+.development-left, .development-right{
+  display: block;
+  width: 60vw;
+  font-size: 3vw;
+  line-height: normal;
+  hyphens: none;
+  /*background-color: orange;*/
+}
+
+.development-left{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20vh;
+  transform: translate(3vw, 0);
+  margin-bottom: 40vh;
+}
+
+.development-right{
+  width: 50vw;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 70vh;
+  transform: translate(40vw, 0);
+}
+
+.development{
+  margin-bottom: 2vh;
+}
+
+.fin{
+  font-size: 1.4vw;
+  hyphens: none;
+  line-height: 1.9vw;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50vh;
+
+}
+
+#final{
+  width: 50vw;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  /*background-color: pink;*/
+  color: darkolivegreen;
+  hyphens: none;
+  font-size: 1.7vw;
+  line-height: 2.3vw;
+  transform: translate(0, -50%) scale(1.7);
+}
+#final > span.borders-green{
+  border-top: 0.2px solid darkolivegreen;
+  border-bottom: 0.2px solid darkolivegreen;
+}
+
+.clock{
+  width: 98vw;
+  height: 98vw;
+  border-radius: 50vw;
+  position: sticky;
+  display: inline;
+  top: 0;
+  left: 0;
+  transform: translate(50vw, 50vh) translate(-50%, -50%);
+  border-right: 1px solid rgb(255, 255, 255);
+  /*background-color: green;*/
+  opacity: 0;
+  display: block;
+  margin-bottom: -55vh;
+}
+.hand, .fhand{
+  width: 1.2px;
+  height: 30vw;
+  border-radius: 5px;
+  background-color: grey;
+  position: absolute;
+  bottom: 49vw;
+  left: 49vw;
+  transform-origin: 50% 100%;
+
+}
+
+.fakehour, .fakemin, .fakesec{
+  background-color: lime;
+  width: 0.2vh;
+}
+
+.min, .fakemin{
+  /*a little bit longer*/
+  height: 40vw;
+}
+
+.sec{
+  /*longer and with a diff col*/
+  height: 48vw;
+  background-color: black;
+}
+
+.fakesec{
+  height: 48vw;
+}
+
+h2{
+  font-weight: normal;
+  display: inline-block;
+  border-top: 1px solid darkolivegreen;
+  border-bottom: 1px solid darkolivegreen;
+  /*border-radius: 50px;*/
+  padding: 1vw;
+  font-size: 4vw;
+  margin-left: 4vw;
+  margin-right: 4vw;
+  text-shadow: 2px 2px 5px grey;
+  color: darkolivegreen;
+  transform: translate(0, -50%);
+  /*background-color: seagreen;*/
+}
+
+h2:hover{
+  text-shadow: 2px 2px 3px darkolivegreen;
+}
+
+.button{
+  text-align: center;
+  padding-top: 15vh;
+}
+
+
+.wrapperoflove2{
+  margin-bottom: 100vh;
+}
+
+
+
+.fakespace{
+  padding-bottom: 40vh;
+  /*background-color: turquoise;*/
+}
+
+.borders{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.borders-green{
+  border-top: 1px solid darkolivegreen;
+  border-bottom: 1px solid darkolivegreen;
+}
+
+
+
+
+@font-face {
+  font-family: "gallique";
+  src: url("./Gallique-Light.otf");
+}
